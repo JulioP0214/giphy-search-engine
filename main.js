@@ -29,5 +29,10 @@ searchForm.addEventListener("submit", function (event) {
         gifItem.appendChild(img);
         gifResults.appendChild(gifItem);
       });
+    })
+    .catch(function (error) {
+      console.log("Error:", error);
+      gifResults.innerHTML =
+        "<p>Sorry, something went wrong. Please try again.</p>";
     });
 });
