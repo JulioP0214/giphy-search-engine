@@ -20,9 +20,13 @@ header {
 
 h1 {
     margin: 0;
+    font-family: 'Fascinate', sans-serif;
+    font-size: 36px;
 }
 
+
 nav {
+    
     display: flex;
     gap: 15px;
 }
@@ -88,4 +92,30 @@ footer {
     width: 100%;
     height: auto;
     display: block;
+}
+
+@media (max-width: 320px) {
+
+ header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .gif-item {
+        width: 100%;
+    }   
 }
