@@ -7,9 +7,9 @@ const apiKey = "phWzOa8leaj2uUeRJjEbj2rHkib8DVdm";
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const searchTerm = searchInput.value;
+  const searchTerm = searchInput.value.trim();
 
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=12`;
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchTerm)}&limit=12`;
 
   fetch(url)
     .then(function (response) {
