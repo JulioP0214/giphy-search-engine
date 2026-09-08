@@ -16,6 +16,18 @@ searchForm.addEventListener("submit", function (event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      gifResults.innerHTML = "";
+
+      data.data.forEach(function (gif) {
+        const gifItem = document.createElement("div");
+        gifItem.className = "gif-item";
+
+        const img = document.createElement("img");
+        img.src = gif.images.fixed_height.url;
+        img.alt = gif.title;
+
+        gifItem.appendChild(img);
+        gifResults.appendChild(gifItem);
+      });
     });
 });
